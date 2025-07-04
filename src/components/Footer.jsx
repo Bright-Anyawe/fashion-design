@@ -1,10 +1,11 @@
 import React from "react";
+import "./styles/Footer.css";
 
 const Footer = () => (
-  <footer className="flex justify-center">
-    <div className="flex max-w-[960px] flex-1 flex-col">
-      <footer className="flex flex-col gap-6 px-5 py-10 text-center @container">
-        <p className="text-[#9c7349] text-base font-normal leading-normal">© 2024 NANA ESY. All rights reserved.</p>
+  <footer className="footer">
+    <div className="footer-inner">
+      <footer className="footer-content">
+        <p className="footer-text">© 2024 NANA ESY. All rights reserved.</p>
       </footer>
     </div>
   </footer>

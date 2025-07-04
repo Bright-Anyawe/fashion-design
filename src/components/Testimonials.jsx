@@ -1,9 +1,10 @@
 import React from "react";
+import "./styles/Testimonials.css";
 
 const Testimonials = () => (
-  <section>
-    <h2 className="text-[#1c140d] text-[22px] font-bold leading-tight tracking-[-0.015em] px-4 pb-3 pt-5">Testimonials</h2>
-    <div className="flex flex-col gap-8 overflow-x-hidden bg-[#fcfaf8] p-4">
+  <section className="testimonials-section">
+    <h2 className="testimonials-title">Testimonials</h2>
+    <div className="testimonials-list">
       {/* Add testimonial cards here as needed */}
     </div>
   </section>

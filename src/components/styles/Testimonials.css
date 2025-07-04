@@ -1,0 +1,22 @@
+/* Testimonials.css - Styles for the Testimonials component */
+
+testimonials-section {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+.testimonials-title {
+  color: #1c140d;
+  font-size: 1.375rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  padding: 0 1rem 0.75rem 1rem;
+}
+.testimonials-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  overflow-x: hidden;
+  background: #fcfaf8;
+  padding: 1rem;
+}

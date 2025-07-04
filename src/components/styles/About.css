@@ -1,0 +1,21 @@
+/* About.css - Styles for the About component */
+
+.about-section {
+  padding-top: 2rem;
+  padding-bottom: 1rem;
+}
+.about-title {
+  color: #1c140d;
+  font-size: 1.375rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  padding: 0 1rem 0.75rem 1rem;
+}
+.about-desc {
+  color: #1c140d;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  padding: 0.25rem 1rem 0.75rem 1rem;
+}
