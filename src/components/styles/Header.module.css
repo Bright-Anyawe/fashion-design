@@ -1,4 +1,4 @@
-/* Header.css - Styles for the Header component */
+/* Header.module.css - Styles for the Header component (CSS Modules) */
 
 .header {
   display: flex;
@@ -159,4 +159,4 @@
     font-size: 0.95rem;
     padding: 0.5rem 0;
   }
-}
+} 

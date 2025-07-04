@@ -19,3 +19,26 @@
   line-height: 1.5;
   padding: 0.25rem 1rem 0.75rem 1rem;
 }
+
+@media (max-width: 1024px) {
+  .about-title {
+    font-size: 1.1rem;
+  }
+  .about-desc {
+    font-size: 0.95rem;
+  }
+}
+@media (max-width: 600px) {
+  .about-section {
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+  }
+  .about-title {
+    font-size: 1rem;
+    padding: 0 0.5rem 0.5rem 0.5rem;
+  }
+  .about-desc {
+    font-size: 0.9rem;
+    padding: 0.25rem 0.5rem 0.5rem 0.5rem;
+  }
+}

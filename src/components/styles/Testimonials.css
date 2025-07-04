@@ -20,3 +20,27 @@ testimonials-section {
   background: #fcfaf8;
   padding: 1rem;
 }
+
+@media (max-width: 1024px) {
+  .testimonials-title {
+    font-size: 1.1rem;
+  }
+  .testimonials-list {
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+}
+@media (max-width: 600px) {
+  .testimonials-section {
+    padding-top: 1rem;
+    padding-bottom: 0.5rem;
+  }
+  .testimonials-title {
+    font-size: 1rem;
+    padding: 0 0.5rem 0.5rem 0.5rem;
+  }
+  .testimonials-list {
+    gap: 0.5rem;
+    padding: 0.5rem;
+  }
+}
