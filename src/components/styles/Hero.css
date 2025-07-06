@@ -64,3 +64,43 @@
   background: #d96e0a;
   outline: none;
 }
+
+/* Responsive styles for Hero section */
+@media (max-width: 1200px) {
+  .hero-section {
+    padding: 1.25rem 4rem;
+  }
+}
+@media (max-width: 900px) {
+  .hero-section {
+    padding: 1.25rem 1.5rem;
+  }
+  .hero-inner {
+    min-height: 320px;
+    padding: 0.75rem;
+  }
+  .hero-title {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 600px) {
+  .hero-section {
+    padding: 0.5rem 0.25rem;
+  }
+  .hero-inner {
+    min-height: 180px;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+  }
+  .hero-title {
+    font-size: 1.25rem;
+  }
+  .hero-subtitle {
+    font-size: 0.95rem;
+  }
+  .hero-btn {
+    height: 2rem;
+    font-size: 0.95rem;
+    padding: 0 0.75rem;
+  }
+}
