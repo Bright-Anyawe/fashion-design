@@ -10,6 +10,10 @@
   position: sticky;
   top: 0;
   z-index: 100;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 .brand {
@@ -17,6 +21,7 @@
   align-items: center;
   gap: 0.75rem;
   text-decoration: none;
+  min-width: 0;
 }
 
 .logo {
@@ -29,6 +34,9 @@
   font-weight: 800;
   letter-spacing: -0.02em;
   color: #1c140d;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .nav {
@@ -53,6 +61,8 @@
   padding: 0;
   background: transparent;
   transition: all 0.3s;
+  max-width: 100vw;
+  overflow-x: hidden;
 }
 
 .navLink {
@@ -112,6 +122,10 @@
 @media (max-width: 700px) {
   .menuToggle {
     display: block;
+    min-width: 48px;
+    min-height: 48px;
+    padding: 0.5rem;
+    border-radius: 0.5rem;
   }
   .navList {
     position: absolute;
@@ -125,14 +139,15 @@
     padding: 1rem 0;
     opacity: 0;
     pointer-events: none;
-    transform: translateY(-10px);
+    transform: translateX(-50%) translateY(-10px);
     transition: opacity 0.3s, transform 0.3s;
     z-index: 99;
+    width: 100vw;
   }
   .navList.open {
     opacity: 1;
     pointer-events: auto;
-    transform: translateY(0);
+    transform: translateX(-50%) translateY(0);
   }
   .ctaWrapper {
     margin-left: 0;
@@ -156,7 +171,8 @@
   }
   .ctaBtn {
     width: 100%;
-    font-size: 0.95rem;
-    padding: 0.5rem 0;
+    min-height: 48px;
+    font-size: 1rem;
+    padding: 0.75rem 0;
   }
 }

@@ -14,13 +14,77 @@ testimonials-section {
 }
 .testimonials-list {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  flex-direction: row;
   gap: 2rem;
   overflow-x: hidden;
   background: #fcfaf8;
   padding: 1rem;
+  justify-content: center;
 }
-
+.testimonial-card {
+  background: #fff;
+  border-radius: 1rem;
+  box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+  padding: 2rem 1.5rem 1.5rem 1.5rem;
+  max-width: 340px;
+  min-width: 260px;
+  flex: 1 1 300px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: box-shadow 0.2s;
+}
+.testimonial-card:hover, .testimonial-card:focus-within {
+  box-shadow: 0 4px 24px rgba(0,0,0,0.12);
+}
+.testimonial-avatar {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 3px solid #f27f0c;
+}
+.testimonial-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.testimonial-stars {
+  margin-bottom: 0.5rem;
+  font-size: 1.1rem;
+}
+.star {
+  color: #e0c08d;
+  margin-right: 2px;
+}
+.star.filled {
+  color: #f7b500;
+}
+.testimonial-quote {
+  font-size: 1.05rem;
+  color: #1c140d;
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+}
+.testimonial-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.1rem;
+}
+.testimonial-name {
+  font-weight: 700;
+  color: #1c140d;
+  font-size: 1rem;
+}
+.testimonial-role {
+  font-size: 0.95rem;
+  color: #9c7349;
+}
 @media (max-width: 1024px) {
   .testimonials-title {
     font-size: 1.1rem;
@@ -28,6 +92,21 @@ testimonials-section {
   .testimonials-list {
     gap: 1rem;
     padding: 0.5rem;
+  }
+  .testimonial-card {
+    padding: 1.5rem 1rem 1rem 1rem;
+    max-width: 100%;
+  }
+}
+@media (max-width: 800px) {
+  .testimonials-list {
+    flex-direction: column;
+    align-items: center;
+  }
+  .testimonial-card {
+    width: 100%;
+    min-width: 0;
+    max-width: 420px;
   }
 }
 @media (max-width: 600px) {
@@ -42,5 +121,22 @@ testimonials-section {
   .testimonials-list {
     gap: 0.5rem;
     padding: 0.5rem;
+  }
+  .testimonial-card {
+    padding: 1rem 0.5rem 0.75rem 0.5rem;
+    border-radius: 0.75rem;
+  }
+  .testimonial-avatar {
+    width: 56px;
+    height: 56px;
+  }
+  .testimonial-quote {
+    font-size: 0.98rem;
+  }
+  .testimonial-name {
+    font-size: 0.98rem;
+  }
+  .testimonial-role {
+    font-size: 0.9rem;
   }
 }

@@ -14,7 +14,7 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <header className={styles.header}>
+    <header className={styles.header} role="banner">
       {/* Logo and Brand */}
       <a href="#" className={styles.brand} aria-label="NANA ESY Home">
         <GiClothes className={styles.logo} />
@@ -26,11 +26,12 @@ const Header = () => {
           className={styles.menuToggle}
           aria-label={menuOpen ? "Close menu" : "Open menu"}
           aria-expanded={menuOpen}
+          aria-controls="main-nav-list"
           onClick={() => setMenuOpen((open) => !open)}
         >
           {menuOpen ? <FaTimes /> : <FaBars />}
         </button>
-        <ul className={`${styles.navList} ${menuOpen ? styles.open : ""}`}>
+        <ul id="main-nav-list" className={`${styles.navList} ${menuOpen ? styles.open : ""}`}>
           {navLinks.map((link) => (
             <li key={link.label}>
               <a className={styles.navLink} href={link.href} onClick={() => setMenuOpen(false)}>
