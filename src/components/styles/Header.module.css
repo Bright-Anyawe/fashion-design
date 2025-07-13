@@ -1,15 +1,23 @@
 /* Header.module.css - Styles for the Header component (CSS Modules) */
 
 .header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1rem 2rem;
-  background: #fff;
-  box-shadow: 0 1px 8px rgba(0,0,0,0.06);
-  position: sticky;
-  top: 0;
+  padding: 1.5rem 2rem;
+  background: transparent;
   z-index: 100;
+  transition: background-color 0.3s, box-shadow 0.3s, padding 0.3s;
+}
+
+.header.scrolled {
+  background: #fff;
+  box-shadow: 0 1px 8px rgba(0, 0, 0, 0.06);
+  padding: 1rem 2rem;
 }
 
 .brand {
@@ -20,7 +28,7 @@
 }
 
 .logo {
-  font-size: 2rem;
+  font-size: 2.5rem;
   color: #f27f0c;
 }
 
@@ -28,6 +36,10 @@
   font-size: 2rem;
   font-weight: 800;
   letter-spacing: -0.02em;
+  color: #fff;
+}
+
+.header.scrolled .brandName {
   color: #1c140d;
 }
 
@@ -40,8 +52,13 @@
   background: none;
   border: none;
   font-size: 2rem;
-  color: #1c140d;
+  color: #fff;
   cursor: pointer;
+  z-index: 101;
+}
+
+.header.scrolled .menuToggle {
+  color: #1c140d;
 }
 
 .navList {
@@ -56,13 +73,17 @@
 }
 
 .navLink {
-  color: #1c140d;
+  color: #fff;
   font-size: 1.125rem;
   font-weight: 600;
   padding: 0.25rem 1rem;
   border-radius: 9999px;
   transition: background 0.2s, color 0.2s;
   text-decoration: none;
+}
+
+.header.scrolled .navLink {
+  color: #1c140d;
 }
 
 .navLink:hover,
@@ -98,11 +119,15 @@
 
 /* Responsive Styles */
 @media (max-width: 900px) {
-  .header {
-    padding: 1rem;
+  .header,
+  .header.scrolled {
+    padding: 1rem 1.5rem;
   }
   .brandName {
     font-size: 1.5rem;
+  }
+  .logo {
+    font-size: 2.25rem;
   }
   .navList {
     gap: 1rem;
@@ -114,49 +139,53 @@
     display: block;
   }
   .navList {
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 0;
     right: 0;
+    bottom: 0;
     left: 0;
     flex-direction: column;
-    background: #fff;
-    box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-    gap: 0.5rem;
-    padding: 1rem 0;
+    align-items: center;
+    justify-content: center;
+    background: rgba(28, 20, 13, 0.95);
+    box-shadow: none;
+    gap: 2rem;
+    padding: 2rem;
     opacity: 0;
     pointer-events: none;
-    transform: translateY(-10px);
+    transform: translateY(-100%);
     transition: opacity 0.3s, transform 0.3s;
-    z-index: 99;
+    z-index: 100;
   }
   .navList.open {
     opacity: 1;
     pointer-events: auto;
     transform: translateY(0);
   }
+  .navLink,
+  .header.scrolled .navLink {
+    color: #fff;
+    font-size: 1.5rem;
+  }
   .ctaWrapper {
     margin-left: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
+    width: auto;
+    display: block;
   }
 }
 
 @media (max-width: 500px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 0.5rem;
-  }
-  .brand {
-    margin-bottom: 0.5rem;
+  .header,
+  .header.scrolled {
+    padding: 1rem;
   }
   .brandName {
-    font-size: 1.1rem;
+    font-size: 1.25rem;
   }
-  .ctaBtn {
-    width: 100%;
-    font-size: 0.95rem;
-    padding: 0.5rem 0;
+  .logo {
+    font-size: 2rem;
+  }
+  .menuToggle {
+    font-size: 1.75rem;
   }
 } 

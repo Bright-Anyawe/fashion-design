@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { GiClothes } from "react-icons/gi";
 import styles from "./styles/Header.module.css"; // Use CSS module for scoping
@@ -12,9 +12,22 @@ const navLinks = [
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 10);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className={styles.header} role="banner">
+    <header
+      className={`${styles.header} ${isScrolled ? styles.scrolled : ""}`}
+      role="banner"
+    >
       {/* Logo and Brand */}
       <a href="#" className={styles.brand} aria-label="NANA ESY Home">
         <GiClothes className={styles.logo} />
