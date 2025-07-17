@@ -21,7 +21,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="hero-section">
+    <section id="home" className="hero-section">
       <div
         className="hero-background"
         style={{ backgroundImage: `url(${images[currentImageIndex]})` }}

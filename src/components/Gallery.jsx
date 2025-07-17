@@ -38,7 +38,7 @@ const Gallery = () => {
   const [activeTab, setActiveTab] = useState(tabLabels[0]);
 
   return (
-    <section className="gallery-section">
+    <section id="gallery" className="gallery-section">
       <h2 className="gallery-title">Gallery</h2>
       <div className="pb-3">
         <div className="gallery-tabs">
